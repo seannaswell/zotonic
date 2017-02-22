@@ -27,13 +27,13 @@ function parse_zotonic_options {
 #
 # usage zotonic [command] [arguments...]
 #
-if type python &> /dev/null
-then
-    export ZOTONIC=${ZOTONIC:=`python -c "import os,sys;print(os.path.realpath(\"$0/../..\"))"`}
-else
-    export ZOTONIC=${ZOTONIC:=$(cd `dirname $0`/..;pwd)}
-fi 
-
+#if type python &> /dev/null
+#then
+#    export ZOTONIC=${ZOTONIC:=`python -c "import os,sys;print(os.path.realpath(\"$0/../..\"))"`}
+#else
+#    export ZOTONIC=${ZOTONIC:=$(cd `dirname $0`/..;pwd)}
+#fi 
+export ZOTONIC=/usr/local/zotonic
 export ZOTONIC_SCRIPTS="$ZOTONIC/src/scripts"
 
 . $ZOTONIC_SCRIPTS/helpers/zotonic_setup
